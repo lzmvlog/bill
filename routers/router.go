@@ -16,6 +16,8 @@ func Router() *gin.Engine {
 	// 加载静态资源文件
 	router.StaticFS("/resources/static/", http.Dir("resources/static/"))
 	// 路由路由
-	router.GET("/login", api.Login)
+	router.GET("/", api.Index)
+	router.POST("/login", api.Login)
+	router.GET("/home", api.Home)
 	return router
 }
