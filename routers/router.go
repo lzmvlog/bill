@@ -18,6 +18,5 @@ func Router() *gin.Engine {
 	// 路由路由
 	router.GET("/", api.Index)
 	router.POST("/login", api.Login)
-	router.GET("/home", api.Home)
 	return router
 }

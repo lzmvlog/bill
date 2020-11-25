@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>主页</title>
+    <title>首页</title>
+    <link rel="stylesheet" href="../resources/static/css/bootstrap.css">
 </head>
 <body>
-登录成功！hello word！
-{{.username}}
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-inverse">
+        <a class="navbar-brand" href="/showPage">账单系统</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/login">学生信息 <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">年级信息</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">退出</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">{{.username}}</button>
+            </form>
+        </div>
+    </nav>
+</div>
 </body>
 </html>

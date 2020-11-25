@@ -15,19 +15,15 @@ func Index(c *gin.Context) {
 
 // 登录
 func Login(c *gin.Context) {
-	username := c.PostForm("username")
-	password := c.PostForm("password")
 	user := new(model.User)
-	count, err := util.Engine.Where("username = ? and password = ?", username, password).Count(user)
+	user.Username = c.PostForm("username")
+	user.Password = c.PostForm("password")
+	count, err := util.Engine.Count(user)
 	if err != nil {
 		log.Println(err)
 	}
-	if count == 1 {
-		c.HTML(http.StatusOK, "home.html", gin.H{"username": username})
-		c.Redirect(http.StatusMovedPermanently, "/home")
-	}
-}
 
-func Home(c *gin.Context) {
-	c.HTML(http.StatusOK, "home.html", gin.H{})
+	if count == 1 {
+		c.HTML(http.StatusOK, "home.html", gin.H{"username": user.Username})
+	}
 }
