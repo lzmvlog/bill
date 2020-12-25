@@ -13,7 +13,7 @@ var Pool *redis.Pool //创建redis连接池
 
 func Init() {
 	var err error
-	//Engine, err = xorm.NewEngine("mysql", "root:123456@tcp(192.168.1.105:3306)/bill?charset=utf8")
+	//Engine, err = xorm.NewEngine("mysql", "root:123456@tcp(192.168.1.106:3306)/bill?charset=utf8")
 	Engine, err = xorm.NewEngine("mysql", "root:Root5683@@tcp(127.0.0.1:3306)/bill?charset=utf8")
 	if err != nil {
 		log.Println(err)
